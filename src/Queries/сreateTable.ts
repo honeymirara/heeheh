@@ -20,16 +20,15 @@ const createTables = async () => {
         toUser int,
         date date,
         text text,
-        file bytea
+        file bytea,
         foreign key (fromUser) references users(id),
         foreign key (toUser) references users(id)
     )
         `,
     )
     .catch(error => {
-      if (error) console.log(error,'tables not create');
+      if (error) console.log(error, 'tables not create');
     });
-    console.log('created');
-    
+  console.log('created');
 };
 export { createTables };
